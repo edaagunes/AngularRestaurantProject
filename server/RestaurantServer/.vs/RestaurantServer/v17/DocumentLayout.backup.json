@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|c:\\users\\edagunes\\source\\repos\\restaurantserver\\restaurantserver.api\\dtos\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|solutionrelative:restaurantserver.api\\dtos\\menudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|c:\\users\\edagunes\\source\\repos\\restaurantserver\\restaurantserver.api\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|solutionrelative:restaurantserver.api\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|c:\\users\\edagunes\\source\\repos\\restaurantserver\\restaurantserver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|solutionrelative:restaurantserver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|c:\\users\\edagunes\\source\\repos\\restaurantserver\\restaurantserver.api\\validations\\menuvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{241575A2-62EB-4DE2-8632-8246CBC86CCE}|RestaurantServer.API\\RestaurantServer.API.csproj|solutionrelative:restaurantserver.api\\validations\\menuvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuDto.cs",
+              "DocumentMoniker": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Dtos\\MenuDto.cs",
+              "RelativeDocumentMoniker": "RestaurantServer.API\\Dtos\\MenuDto.cs",
+              "ToolTip": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Dtos\\MenuDto.cs",
+              "RelativeToolTip": "RestaurantServer.API\\Dtos\\MenuDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T17:50:37.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenusController.cs",
+              "DocumentMoniker": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Controllers\\MenusController.cs",
+              "RelativeDocumentMoniker": "RestaurantServer.API\\Controllers\\MenusController.cs",
+              "ToolTip": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Controllers\\MenusController.cs",
+              "RelativeToolTip": "RestaurantServer.API\\Controllers\\MenusController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwEgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T17:15:54.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Program.cs",
+              "RelativeDocumentMoniker": "RestaurantServer.API\\Program.cs",
+              "ToolTip": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Program.cs",
+              "RelativeToolTip": "RestaurantServer.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T17:11:16.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuValidator.cs",
+              "DocumentMoniker": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Validations\\MenuValidator.cs",
+              "RelativeDocumentMoniker": "RestaurantServer.API\\Validations\\MenuValidator.cs",
+              "ToolTip": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\Validations\\MenuValidator.cs",
+              "RelativeToolTip": "RestaurantServer.API\\Validations\\MenuValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T17:05:30.996Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
