@@ -1,5 +1,6 @@
+import { AboutService } from './../_services/about.service';
 import { Component } from '@angular/core';
-import { About } from '../_models/about';
+import { AboutModel } from '../_models/about';
 
 @Component({
   selector: 'app-about',
@@ -8,10 +9,17 @@ import { About } from '../_models/about';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-about: About = {id:1, title: 'Hakkımızda', description: 'Hakkımızda açıklaması'}
-about2: About = {id:2, title: 'Hakkımızda 2', description: 'Hakkımızda açıklaması 2'}
-about3: About = {id:3, title: 'Hakkımızda 3', description: 'Hakkımızda açıklaması 3'}
-about4: About = {id:4, title: 'Hakkımızda 4', description: 'Hakkımızda açıklaması 4'}
 
-abouts: About[] = [this.about, this.about2, this.about3, this.about4]
+  constructor(private aboutService: AboutService) {
+  this.getAbouts();
+  }
+
+  aboutList: AboutModel[];
+  getAbouts()
+  {
+    this.aboutService.getAll().subscribe({
+      next: values => this.aboutList = values,
+      error: error => console.log(error)
+    });
+  }
 }

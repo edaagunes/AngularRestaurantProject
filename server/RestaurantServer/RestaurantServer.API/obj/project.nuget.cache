@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wwKr4JKxmiE=",
+  "dgSpecHash": "dOLwaqG3x5s=",
   "success": true,
-  "projectFilePath": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
+  "projectFilePath": "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EdaGunes\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\EdaGunes\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

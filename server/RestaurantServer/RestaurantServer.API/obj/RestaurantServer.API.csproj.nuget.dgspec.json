@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj": {}
+    "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj": {
+    "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
+        "projectUniqueName": "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
         "projectName": "RestaurantServer.API",
-        "projectPath": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
+        "projectPath": "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\RestaurantServer.API.csproj",
         "packagesPath": "C:\\Users\\EdaGunes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EdaGunes\\Source\\Repos\\RestaurantServer\\RestaurantServer.API\\obj\\",
+        "outputPath": "C:\\Users\\EdaGunes\\Source\\Repos\\AngularRestaurantProject\\server\\RestaurantServer\\RestaurantServer.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
