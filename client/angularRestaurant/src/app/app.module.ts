@@ -13,6 +13,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { CategoryComponent } from './admin/category/category.component';
 import { FormsModule } from '@angular/forms';
 import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
+import { ServiceComponent } from './service/service.component';
+import { ChefComponent } from './chef/chef.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,10 @@ import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
     AboutComponent,
     ContactComponent,
     MenuComponent,
+    ServiceComponent,
     CategoryComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    ChefComponent
   ],
   imports: [
     BrowserModule,

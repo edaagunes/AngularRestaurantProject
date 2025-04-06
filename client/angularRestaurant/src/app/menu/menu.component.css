@@ -1,0 +1,7 @@
+
+.nav-pills .nav-item a {
+  text-decoration: none; /* Kategori adlarının altındaki çizgiyi kaldırır */
+  border-bottom: none; /* Alt sınırı kaldırır */
+}
+
+
