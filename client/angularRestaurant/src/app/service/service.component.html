@@ -1,0 +1,15 @@
+<div  class="container-xxl py-5">
+  <div class="container">
+      <div  class="row g-4">
+          <div *ngFor="let item of serviceList"  class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="service-item rounded pt-3">
+                  <div class="p-4">
+                      <i class="fa fa-3x {{item.icon}} text-primary mb-4"></i>
+                      <h5>{{item.title}}</h5>
+                      <p>{{item.description}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
