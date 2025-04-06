@@ -19,6 +19,7 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+server/RestaurantServer/.vs/
 
 # Visual Studio Code
 .vscode/*
