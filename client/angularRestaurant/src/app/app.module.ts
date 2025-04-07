@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
 import { ServiceComponent } from './service/service.component';
 import { ChefComponent } from './chef/chef.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChefComponent } from './chef/chef.component';
     ServiceComponent,
     CategoryComponent,
     AdminMenuComponent,
-    ChefComponent
+    ChefComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
