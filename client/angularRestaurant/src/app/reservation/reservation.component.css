@@ -1,0 +1,45 @@
+.video {
+  position: relative;
+  background-image: url('https://img.youtube.com/vi/WW0SLuX8HsI/maxresdefault.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-play span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-left: 6px solid #333;
+  border-top: 6px solid #333;
+  transform: rotate(45deg);
+}
+
+.btn-play:focus {
+  outline: none;
+}
+
+.btn-play:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}

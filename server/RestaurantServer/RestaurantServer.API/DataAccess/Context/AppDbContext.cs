@@ -16,5 +16,6 @@ namespace RestaurantServer.API.DataAccess.Context
 		public DbSet<Service> Services { get; set; }
 		public DbSet<Chef> Chefs { get; set; }
 		public DbSet<FooterAddress> FooterAddresses { get; set; }
+		public DbSet<Reservation> Reservations { get; set; }
 	}
 }

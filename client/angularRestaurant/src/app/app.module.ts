@@ -16,6 +16,7 @@ import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
 import { ServiceComponent } from './service/service.component';
 import { ChefComponent } from './chef/chef.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     CategoryComponent,
     AdminMenuComponent,
     ChefComponent,
-    FooterComponent
+    FooterComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

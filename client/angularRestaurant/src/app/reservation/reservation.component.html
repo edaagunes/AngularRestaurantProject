@@ -1,0 +1,95 @@
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="video" style="background-image: url('https://img.youtube.com/vi/WW0SLuX8HsI/maxresdefault.jpg');">
+          <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/WW0SLuX8HsI?si=65aF3d7U7oyJX1mq" data-bs-target="#videoModal">
+              <span></span>
+          </button>
+      </div>
+  </div>
+      <div class="col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+              <h5 class="section-title ff-secondary text-start text-primary fw-normal">Rezervasyon</h5>
+              <h1 class="text-white mb-4">Bir Masa Ayırın</h1>
+              <form (ngSubmit)="create()" #reservationForm="ngForm">
+                  <div class="row g-3">
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input type="text" class="form-control" id="name" placeholder="Ad Soyad" name="name" [(ngModel)]="reservation.name" required>
+                              <label for="name">Ad Soyad</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input type="email" class="form-control" id="email" placeholder="Email" name="email" [(ngModel)]="reservation.email" required>
+                              <label for="email">Email</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating date" id="date3" data-target-input="nearest">
+                            <input type="datetime-local" class="form-control" id="datetime" name="date" [(ngModel)]="reservation.date" required />
+                              <label for="datetime">Gün & Saat</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                            <select class="form-select" id="select1"
+                            name="peopleCount"
+                            [(ngModel)]="reservation.peopleCount"
+                            [ngModelOptions]="{standalone: true}"
+                            required>
+                            <option *ngFor="let p of [1,2,3,4,5,6]" [value]="p" [ngValue]="p">{{p}}</option>
+                    </select>
+                              <label for="select1">Kişi Sayısı</label>
+                            </div>
+                      </div>
+                      <div class="col-12">
+                          <div class="form-floating">
+                              <textarea class="form-control" placeholder="Varsa Notunuz" id="description" name="description" [(ngModel)]="reservation.description" style="height: 100px"></textarea>
+                              <label for="message">Varsa Notunuz</label>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <button class="btn btn-primary w-100 py-3" type="submit">Rezervasyon Yap</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- 16:9 aspect ratio -->
+              <div class="ratio ratio-16x9">
+                  <iframe id="video" class="embed-responsive-item" allowfullscreen></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  // Modal açıldığında çalışacak
+  var videoModal = document.getElementById('videoModal');
+
+  videoModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget; // Button'a tıklama
+      var videoSrc = button.getAttribute('data-src'); // 'data-src' özelliğinden video URL'sini al
+      var iframe = videoModal.querySelector('#video'); // iframe elementini seç
+      iframe.src = videoSrc + "&autoplay=1&modestbranding=1&showinfo=0"; // src'yi güncelle
+  });
+
+  // Modal kapatıldığında videoyu durdurmak için
+  videoModal.addEventListener('hide.bs.modal', function () {
+      var iframe = videoModal.querySelector('#video');
+      iframe.src = ""; // Video durdurulacak
+  });
+</script>
