@@ -1,26 +1,27 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <div class="container">
   <br>
-  <h3>Şefler</h3>
+  <h3>Hizmetler</h3>
   <br>
 <table class="table table-bordered">
   <thead>
   <tr>
     <th>#</th>
-    <th>Şef</th>
-    <th>Ünvanı</th>
+    <th>Başlık</th>
+    <th>Açıklama</th>
     <th>İşlemler</th>
   </tr>
 </thead>
 
 <tbody>
-  <tr *ngFor="let item of chefList;let i = index">
+  <tr *ngFor="let item of ServiceList;let i = index">
     <td>{{i+1}}</td>
-    <td><img src="{{item.imageUrl}}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
-      {{item.fullName}}</td>
-    <td>{{ item.title}}</td>
+    <td><i class="fa fa-2x {{item.icon}} text-primary mb-4"></i> {{item.title}}</td>
+    <td>{{ item.description}}</td>
 
     <td>
-      <button type="button" class="btn btn-danger" (click)="delete(item.chefId)">
+      <button type="button" class="btn btn-danger" (click)="delete(item.serviceId)">
         Sil
       </button>
       <button type="button" class="btn btn-info" (click)="onSelected(item)" data-bs-toggle="modal" data-bs-target="#editModal">
@@ -31,7 +32,7 @@
 </tbody>
 </table>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
-  Yeni Şef
+  Yeni Hizmet
 </button>
 
 </div>
@@ -42,29 +43,29 @@
     <form #createForm="ngForm" (ngSubmit)="create(); createForm.resetForm()">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="createModalLabel">Yeni Şef Ekle</h1>
+        <h1 class="modal-title fs-5" id="createModalLabel">Yeni Hizmet Ekle</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Ad Soyad</label>
-          <input type="text" class="form-control" name="fullName" [(ngModel)]="chef.fullName" required="">
-          <div *ngIf="errors?.FullName">
-            <span *ngFor="let error of errors.FullName" class="text-danger">{{error}}</span>
+          <label>İkon</label>
+          <input type="text" class="form-control" name="icon" [(ngModel)]="Service.icon" required="">
+          <div *ngIf="errors?.Icon">
+            <span *ngFor="let error of errors.Icon" class="text-danger">{{error}}</span>
           </div>
         </div>
         <div class="form-group">
-          <label>Ünvan</label>
-          <input type="text" class="form-control" name="title" [(ngModel)]="chef.title" required="">
+          <label>Başlık</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="Service.title" required="">
           <div *ngIf="errors?.Title">
             <span *ngFor="let error of errors.Title" class="text-danger">{{error}}</span>
           </div>
         </div>
         <div class="form-group">
-          <label>Görsel Yolu</label>
-          <input type="text" class="form-control" name="imageUrl" [(ngModel)]="chef.imageUrl" required="">
-          <div *ngIf="errors?.ImageUrl">
-            <span *ngFor="let error of errors.ImageUrl" class="text-danger">{{error}}</span>
+          <label>Açıklama</label>
+          <textarea rows="5" type="text" class="form-control" name="description" [(ngModel)]="Service.description" required=""></textarea>
+          <div *ngIf="errors?.Description">
+            <span *ngFor="let error of errors.Description" class="text-danger">{{error}}</span>
           </div>
         </div>
       </div>
@@ -88,35 +89,36 @@
     <form #editForm="ngForm" (ngSubmit)="update()">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editModalLabel">Şef Bilgilerini Güncelle</h1>
+        <h1 class="modal-title fs-5" id="editModalLabel">Hakkımızda Güncelle</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Ad Soyad</label>
-          <input type="text" class="form-control" name="fullName" [(ngModel)]="editChef.fullName" required="" >
-          <div *ngIf="errors?.FullName">
-            <span *ngFor="let error of errors.FullName" class="text-danger">{{error}}</span>
+          <label>İkon</label>
+          <input type="text" class="form-control" name="icon" [(ngModel)]="editService.icon" required="" >
+          <div *ngIf="errors?.Icon">
+            <span *ngFor="let error of errors.Icon" class="text-danger">{{error}}</span>
           </div>
         </div>
         <div class="form-group">
-            <label>Ünvan</label>
-            <input type="text" class="form-control" name="title" [(ngModel)]="editChef.title" required="" >
-            <div *ngIf="errors?.Title">
-              <span *ngFor="let error of errors.Title" class="text-danger">{{error}}</span>
-            </div>
+          <label>Başlık Adı</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="editService.title" required="" >
+          <div *ngIf="errors?.Title">
+            <span *ngFor="let error of errors.Title" class="text-danger">{{error}}</span>
+          </div>
         </div>
         <div class="form-group">
-          <label>Görsel Yolu</label>
-          <input type="text" class="form-control" name="imageUrl" [(ngModel)]="editChef.imageUrl" required="" >
-          <div *ngIf="errors?.ImageUrl">
-            <span *ngFor="let error of errors.ImageUrl" class="text-danger">{{error}}</span>
+          <label>Açıklama</label>
+          <textarea type="text" class="form-control" name="description" [(ngModel)]="editService.description" required="" rows="5"></textarea>
+          <div *ngIf="errors?.Description">
+            <span *ngFor="let error of errors.Description" class="text-danger">{{error}}</span>
           </div>
-      </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-        <button type="submit" class="btn btn-primary" [disabled]="editForm.invalid || !editForm.dirty">Güncelle</button>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+
 
         <!-- Edit Modal Close Button (Gizli) -->
         <button #editModalCloseBtn type="button" class="btn btn-secondary d-none" data-bs-dismiss="modal">Kapat</button>

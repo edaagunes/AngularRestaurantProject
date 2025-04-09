@@ -8,7 +8,7 @@ namespace RestaurantServer.API.Validations
 		public ChefValidator()
 		{
 			RuleFor(x => x.FullName).NotEmpty().WithMessage("Şef Adı Boş Bırakılamaz")
-									.MinimumLength(3).WithMessage("Şef Adı en az 3 karakter olmalıdır.");
+									.MinimumLength(3).WithMessage("Şef Adı En Az 3 karakter olmalıdır.");
 			RuleFor(x => x.Title).NotEmpty().WithMessage("Şef Ünvanı Boş Bırakılamaz")
 									.MinimumLength(5).WithMessage("Ünvanı En Az 5 Karakter Olmalıdır")
 									.MaximumLength(100).WithMessage("Ünvanı En Fazla 100 Karakter Olmalıdır");

@@ -1,43 +1,42 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AboutService } from '../../_services/about.service';
-import { AboutModel } from '../../_models/about';
+import { FooterService } from '../../_services/footer.service';
+import { FooterModel } from '../../_models/footer';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-admin-about',
+  selector: 'app-admin-footer',
   standalone: false,
-  templateUrl: './admin-about.component.html',
-  styleUrl: './admin-about.component.css'
+  templateUrl: './admin-footer.component.html',
+  styleUrl: './admin-footer.component.css'
 })
-export class AdminAboutComponent {
-
+export class AdminFooterComponent {
 @ViewChild('createModalCloseBtn') createModalCloseBtn: ElementRef;
 @ViewChild('editModalCloseBtn') editModalCloseBtn: ElementRef;
 
-constructor(private aboutService: AboutService) {
-this.getAbout();
+constructor(private footerService: FooterService) {
+this.getFooter();
 }
 
-aboutList: AboutModel[];
-about:AboutModel = new AboutModel();
-editAbout:any={};
+footerList: FooterModel[];
+footer:FooterModel = new FooterModel();
+editFooter:any={};
 errors: any={};
 
-getAbout()
+getFooter()
 {
-  this.aboutService.getAll().subscribe({
-    next: values => this.aboutList = values,
+  this.footerService.getAll().subscribe({
+    next: values => this.footerList = values,
     error: error => console.log(error)
   });
 }
 
 create()
 {
-  this.aboutService.create(this.about).subscribe({
+  this.footerService.create(this.footer).subscribe({
     next: value => {
-      this.about = new AboutModel();
+      this.footer = new FooterModel();
       this.errors = {};
-      this.getAbout();
+      this.getFooter();
       this.createModalCloseBtn.nativeElement.click(); // modalı manuel kapat
     },
     error: err => {
@@ -55,17 +54,17 @@ create()
   });
 }
 
-onSelected(about: AboutModel) {
-  this.editAbout = { ...about }; // kopya objeyle çalış
+onSelected(footer: FooterModel) {
+  this.editFooter = { ...footer }; // kopya objeyle çalış
   this.errors = {}; // hataları da temizle
 }
 
 update()
 {
-  this.aboutService.update(this.editAbout.serviceId, this.editAbout).subscribe({
+  this.footerService.update(this.editFooter.footerAddressId, this.editFooter).subscribe({
     next: res => {
-      this.getAbout();
-      this.editAbout = {}; // formu temizle
+      this.getFooter();
+      this.editFooter = {}; // formu temizle
       this.errors = {};
       this.editModalCloseBtn.nativeElement.click(); // modalı manuel kapat
       Swal.fire({
@@ -97,17 +96,18 @@ delete(id)
         cancelButtonText: "İptal"
       }).then((result) => {
         if (result.isConfirmed) {
-          this.aboutService.delete(id).subscribe({
+          this.footerService.delete(id).subscribe({
             error: err => console.log(err),
             complete: () =>  {
               Swal.fire({
               title: "Silindi!",
-              text: "Hakkımızda Silindi!",
+              text: "Footer Silindi!",
               icon: "success"
-            }).then(()=>this.getAbout());
+            }).then(()=>this.getFooter());
           }
           })
         }
       });
 }
 }
+

@@ -46,15 +46,15 @@ namespace RestaurantServer.API.Controllers
 		// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
 		[HttpPut("{id}")]
 		public async Task<IActionResult> PutChef(int id, Chef chef)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
-
+		{		
 			if (id != chef.ChefId)
 			{
 				return BadRequest();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
 			}
 
 			_context.Entry(chef).State = EntityState.Modified;

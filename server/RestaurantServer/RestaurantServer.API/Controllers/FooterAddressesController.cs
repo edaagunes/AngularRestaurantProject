@@ -52,7 +52,12 @@ namespace RestaurantServer.API.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(footerAddress).State = EntityState.Modified;
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.Entry(footerAddress).State = EntityState.Modified;
 
             try
             {
@@ -78,7 +83,12 @@ namespace RestaurantServer.API.Controllers
         [HttpPost]
         public async Task<ActionResult<FooterAddress>> PostFooterAddress(FooterAddress footerAddress)
         {
-            _context.FooterAddresses.Add(footerAddress);
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.FooterAddresses.Add(footerAddress);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetFooterAddress", new { id = footerAddress.FooterAddressId }, footerAddress);

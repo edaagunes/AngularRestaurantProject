@@ -47,7 +47,12 @@ namespace RestaurantServer.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutService(int id, Service service)
         {
-            if (id != service.ServiceId)
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			if (id != service.ServiceId)
             {
                 return BadRequest();
             }
@@ -78,7 +83,12 @@ namespace RestaurantServer.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Service>> PostService(Service service)
         {
-            _context.Services.Add(service);
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.Services.Add(service);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetService", new { id = service.ServiceId }, service);

@@ -19,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
 import { AdminChefComponent } from './admin/admin-chef/admin-chef.component';
+import { AdminServiceComponent } from './admin/admin-service/admin-service.component';
+import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { AdminChefComponent } from './admin/admin-chef/admin-chef.component';
     AdminAboutComponent,
     AdminMenuComponent,
     AdminChefComponent,
+    AdminServiceComponent,
+    AdminFooterComponent,
     AboutComponent,
     ContactComponent,
     MenuComponent,
@@ -36,7 +40,7 @@ import { AdminChefComponent } from './admin/admin-chef/admin-chef.component';
     CategoryComponent,
     ChefComponent,
     FooterComponent,
-    ReservationComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,43 +1,42 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AboutService } from '../../_services/about.service';
-import { AboutModel } from '../../_models/about';
 import Swal from 'sweetalert2';
+import { ServiceModel } from '../../_models/service';
+import { ServiceService } from '../../_services/service.service';
 
 @Component({
-  selector: 'app-admin-about',
+  selector: 'app-admin-service',
   standalone: false,
-  templateUrl: './admin-about.component.html',
-  styleUrl: './admin-about.component.css'
+  templateUrl: './admin-service.component.html',
+  styleUrl: './admin-service.component.css'
 })
-export class AdminAboutComponent {
-
+export class AdminServiceComponent {
 @ViewChild('createModalCloseBtn') createModalCloseBtn: ElementRef;
 @ViewChild('editModalCloseBtn') editModalCloseBtn: ElementRef;
 
-constructor(private aboutService: AboutService) {
-this.getAbout();
+constructor(private serviceService: ServiceService) {
+this.getService();
 }
 
-aboutList: AboutModel[];
-about:AboutModel = new AboutModel();
-editAbout:any={};
+ServiceList: ServiceModel[];
+Service:ServiceModel = new ServiceModel();
+editService:any={};
 errors: any={};
 
-getAbout()
+getService()
 {
-  this.aboutService.getAll().subscribe({
-    next: values => this.aboutList = values,
+  this.serviceService.getAll().subscribe({
+    next: values => this.ServiceList = values,
     error: error => console.log(error)
   });
 }
 
 create()
 {
-  this.aboutService.create(this.about).subscribe({
+  this.serviceService.create(this.Service).subscribe({
     next: value => {
-      this.about = new AboutModel();
+      this.Service = new ServiceModel();
       this.errors = {};
-      this.getAbout();
+      this.getService();
       this.createModalCloseBtn.nativeElement.click(); // modalı manuel kapat
     },
     error: err => {
@@ -55,17 +54,17 @@ create()
   });
 }
 
-onSelected(about: AboutModel) {
-  this.editAbout = { ...about }; // kopya objeyle çalış
+onSelected(Service: ServiceModel) {
+  this.editService = { ...Service }; // kopya objeyle çalış
   this.errors = {}; // hataları da temizle
 }
 
 update()
 {
-  this.aboutService.update(this.editAbout.serviceId, this.editAbout).subscribe({
+  this.serviceService.update(this.editService.serviceId, this.editService).subscribe({
     next: res => {
-      this.getAbout();
-      this.editAbout = {}; // formu temizle
+      this.getService();
+      this.editService = {}; // formu temizle
       this.errors = {};
       this.editModalCloseBtn.nativeElement.click(); // modalı manuel kapat
       Swal.fire({
@@ -97,14 +96,14 @@ delete(id)
         cancelButtonText: "İptal"
       }).then((result) => {
         if (result.isConfirmed) {
-          this.aboutService.delete(id).subscribe({
+          this.serviceService.delete(id).subscribe({
             error: err => console.log(err),
             complete: () =>  {
               Swal.fire({
               title: "Silindi!",
               text: "Hakkımızda Silindi!",
               icon: "success"
-            }).then(()=>this.getAbout());
+            }).then(()=>this.getService());
           }
           })
         }
