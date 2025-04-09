@@ -65,7 +65,6 @@ export class AdminMenuComponent {
         })
       }
     });
-
    }
 onSelected(model)
 {

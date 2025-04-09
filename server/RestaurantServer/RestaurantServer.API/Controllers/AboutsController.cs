@@ -41,13 +41,18 @@ namespace RestaurantServer.API.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAbout(int id, About about)
-        {
-            if (id != about.Id)
+        { 
+			if (id != about.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(about).State = EntityState.Modified;
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.Entry(about).State = EntityState.Modified;
 
             try
             {
@@ -73,7 +78,12 @@ namespace RestaurantServer.API.Controllers
         [HttpPost]
         public async Task<ActionResult<About>> PostAbout(About about)
         {
-            _context.Abouts.Add(about);
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.Abouts.Add(about);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetAbout", new { id = about.Id }, about);

@@ -1,0 +1,114 @@
+<div class="container">
+  <br>
+  <h3>Kategoriler</h3>
+  <br>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Başlık</th>
+    <th>Açıklama</th>
+    <th>İşlemler</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let item of aboutList;let i = index">
+    <td>{{i+1}}</td>
+    <td>{{item.title}}</td>
+    <td>{{ item.description?.substring(0, 50) }}{{ item.description?.length > 50 ? '...' : '' }}</td>
+
+    <td>
+      <button type="button" class="btn btn-danger" (click)="delete(item.id)">
+        Sil
+      </button>
+      <button type="button" class="btn btn-info" (click)="onSelected(item)" data-bs-toggle="modal" data-bs-target="#editModal">
+        Güncelle
+      </button>
+    </td>
+  </tr>
+</tbody>
+</table>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+  Yeni Hakkımızda
+</button>
+
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form #createForm="ngForm" (ngSubmit)="create(); createForm.resetForm()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="createModalLabel">Yeni Hakkımızda Ekle</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Başlık</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="about.title" required="">
+          <div *ngIf="errors?.Title">
+            <span *ngFor="let error of errors.Title" class="text-danger">{{error}}</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Açıklama</label>
+          <textarea rows="5" type="text" class="form-control" name="description" [(ngModel)]="about.description" required=""></textarea>
+          <div *ngIf="errors?.Description">
+            <span *ngFor="let error of errors.Description" class="text-danger">{{error}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+
+        <!-- Modal Close Button (Gizli) -->
+        <button #createModalCloseBtn type="button" class="btn btn-secondary d-none" data-bs-dismiss="modal">Kapat</button>
+
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form #editForm="ngForm" (ngSubmit)="update()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editModalLabel">Hakkımızda Güncelle</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Başlık Adı</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="editAbout.title" required="" >
+          <div *ngIf="errors?.Title">
+            <span *ngFor="let error of errors.Title" class="text-danger">{{error}}</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Açıklama</label>
+          <textarea type="text" class="form-control" name="description" [(ngModel)]="editAbout.description" required="" rows="5"></textarea>
+          <div *ngIf="errors?.Description">
+            <span *ngFor="let error of errors.Description" class="text-danger">{{error}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+        <button type="submit" class="btn btn-primary" [disabled]="editForm.invalid || !editForm.dirty">Güncelle</button>
+
+        <!-- Edit Modal Close Button (Gizli) -->
+        <button #editModalCloseBtn type="button" class="btn btn-secondary d-none" data-bs-dismiss="modal">Kapat</button>
+
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

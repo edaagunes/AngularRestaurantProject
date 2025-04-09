@@ -17,6 +17,8 @@ import { ServiceComponent } from './service/service.component';
 import { ChefComponent } from './chef/chef.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AdminAboutComponent } from './admin/admin-about/admin-about.component';
+import { AdminChefComponent } from './admin/admin-chef/admin-chef.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,17 @@ import { ReservationComponent } from './reservation/reservation.component';
     HomeComponent,
     MainLayoutComponent,
     AdminLayoutComponent,
+    AdminAboutComponent,
+    AdminMenuComponent,
+    AdminChefComponent,
     AboutComponent,
     ContactComponent,
     MenuComponent,
     ServiceComponent,
     CategoryComponent,
-    AdminMenuComponent,
     ChefComponent,
     FooterComponent,
-    ReservationComponent
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
