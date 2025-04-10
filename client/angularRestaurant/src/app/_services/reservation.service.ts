@@ -30,4 +30,8 @@ export class ReservationService {
     {
       return this.http.delete(this.baseUrl+id);
     }
+
+    toggleActive(id: number) {
+      return this.http.put<ReservationModel>(`${this.baseUrl}ToggleActive/${id}`, {});
+    }
 }

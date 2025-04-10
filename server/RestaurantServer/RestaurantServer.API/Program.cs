@@ -1,7 +1,10 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using RestaurantServer.API.DataAccess.Context;
+using RestaurantServer.API.DataAccess.Entities;
+using System.Globalization;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
@@ -33,6 +36,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddFluentValidationAutoValidation().AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

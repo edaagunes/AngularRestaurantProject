@@ -52,7 +52,12 @@ namespace RestaurantServer.API.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(reservation).State = EntityState.Modified;
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			_context.Entry(reservation).State = EntityState.Modified;
 
             try
             {
@@ -78,7 +83,12 @@ namespace RestaurantServer.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Reservation>> PostReservation([FromBody] Reservation reservation)
         {
-            reservation.IsActive = true;
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			reservation.IsActive = true;
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
 
@@ -105,5 +115,20 @@ namespace RestaurantServer.API.Controllers
         {
             return _context.Reservations.Any(e => e.ReservationId == id);
         }
-    }
+
+		[HttpPut("ToggleActive/{id}")]
+		public async Task<IActionResult> ToggleActive(int id)
+		{
+			var reservation = await _context.Reservations.FindAsync(id);
+			if (reservation == null)
+			{
+				return NotFound();
+			}
+
+			reservation.IsActive = !reservation.IsActive;
+			await _context.SaveChangesAsync();
+
+			return Ok(reservation);
+		}
+	}
 }

@@ -4,8 +4,7 @@
   <thead>
   <tr>
     <th>#</th>
-    <th>Görsel</th>
-    <th>Başlık</th>
+    <th>Ürün</th>
     <th>Fiyat</th>
     <th>Kategori</th>
     <th>İşlemler</th>
@@ -15,14 +14,14 @@
 <tbody>
   <tr *ngFor="let item of menuList;let i = index">
     <td>{{i+1}}</td>
-    <td><img src="{{item.imageUrl}}" alt="Menü Resmi" style="height: 75px; width: 75;"></td>
-    <td>{{item.title | titlecase}}</td>
+    <td><img src="{{item.imageUrl}}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 10px;"> {{item.title | titlecase}}</td>
     <td>{{item.price | currency: '₺'}}</td>
     <td>{{item.category.categoryName}}</td>
     <td>
       <button type="button" class="btn btn-danger" (click)="delete(item.id)">
         Sil
       </button>
+      &nbsp;
       <button type="button" class="btn btn-info" (click)="onSelected(item)" data-bs-toggle="modal" data-bs-target="#editModal">
         Güncelle
       </button>
@@ -100,7 +99,7 @@
     <form #editForm="ngForm" (ngSubmit)="update()">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="editModalLabel">Yeni Ürün Güncelle</h1>
+        <h1 class="modal-title fs-5" id="editModalLabel">Ürün Güncelle</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

@@ -6,4 +6,5 @@ export class ReservationModel
   peopleCount;
   date;
   description;
+  isActive;
 }
