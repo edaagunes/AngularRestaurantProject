@@ -1,7 +1,7 @@
 # Angular ile Restaurant Projesi
 
 🌟Bu proje, Angular ve .NET Core 8 teknolojileri kullanılarak geliştirilmiş, API tabanlı modern bir web uygulamasıdır.
-Kullanıcıların resturanta kolayca rezervasyon yapabilmesini, menüdeki ürünleri kategorilerine göre görüntüleyebilmesini ve restaurant hakkında bilgi edinmesi sağlandı.
+Kullanıcıların restauranta kolayca rezervasyon yapabilmesini, menüdeki ürünleri kategorilerine göre görüntüleyebilmesini ve restaurant hakkında bilgi edinmesi sağlandı.
 
 Admin tarafında yapılan rezervasyonların listelenmesi ve durumlarının güncellenebilmesi, ürün işlemleri, site içerisindeki alanların dinamik güncellenebilmesi sağlandı. Ayrıca, **FluentValidation** kütüphanesi ile kullanıcı giriş doğrulama süreçleri güvence altına alındı.
 
